@@ -1,0 +1,69 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<h1>HTML Calculator</h1>
+	<div id="calc-parent">
+		<div class="row">
+			<div class="column" id="calc-display-val">0</div>
+		</div>
+		<div class="row">
+			<div class="calc-btn column" id="calc-clear">AC</div>
+			<div class="calc-btn column" id="calc-backspace" onClick="backspace()">&#8676;</div>
+			<div class="calc-btn calc-btn-operator column" id="calc-divide">&#247;</div>
+		</div>
+		<div class="row">
+			<div class="calc-btn calc-btn-num column" id="calc-seven" onClick="getInput(7)">7</div>
+			<div class="calc-btn calc-btn-num column" id="calc-eight" onClick="getInput(8)">8</div>
+			<div class="calc-btn calc-btn-num column" id="calc-nine" onClick="getInput(9)">9</div>
+			<div class="calc-btn calc-btn-operator column" id="calc-multiply">x</div>
+		</div>
+		<div class="row">
+			<div class="calc-btn calc-btn-num column" id="calc-four" onClick="getInput(4)">4</div>
+			<div class="calc-btn calc-btn-num column" id="calc-five" onClick="getInput(5)">5</div>
+			<div class="calc-btn calc-btn-num column" id="calc-six" onClick="getInput(6)">6</div>
+			<div class="calc-btn calc-btn-operator column" id="calc-minus">-</div>
+		</div>
+		<div class="row">
+			<div class="calc-btn calc-btn-num column" id="calc-one" onClick="getInput(1)">1</div>
+			<div class="calc-btn calc-btn-num column" id="calc-two" onClick="getInput(2)">2</div>
+			<div class="calc-btn calc-btn-num column" id="calc-three" onClick="getInput(3)">3</div>
+			<div class="calc-btn calc-btn-operator column" id="calc-addition">+</div>
+		</div>
+		<div class="row">
+			<div class="calc-btn calc-btn-num column" id="calc-zero" onClick="getInput(0)">0</div>
+			<div class="calc-btn column" id="calc-decimal" onClick="getInput('.')">.</div>
+			<div class="calc-btn calc-btn-operator column" id="calc-equals">=</div>
+		</div>
+	</div>
+	<script>
+		function getInput(input) {
+			let displayValElement = document.getElementById("calc-display-val")
+			let displayVal = displayValElement.innerHTML;
+			if (displayVal.length < 12) {
+				if (input == "." && displayVal % 1 !== 0) {
+					input = '';
+				}
+				if (displayVal === "0")
+					displayVal = "";
+				displayVal += input;
+				displayValElement.innerHTML = displayVal;
+			}
+
+		}
+
+		function backspace() {
+			let displayValElement = document.getElementById("calc-display-val");
+			let displayVal = displayValElement.innerHTML;
+			
+
+		}
+	</script>
+
+
+</body>
+
+</html>
